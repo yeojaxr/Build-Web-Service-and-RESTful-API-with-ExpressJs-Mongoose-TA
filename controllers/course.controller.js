@@ -26,7 +26,7 @@ class CourseController {
 
   static async getAllCourse(req, res) {
     try {
-      const courseList = await CourseModel.find();
+      const courseList = await CourseModel.find().populate("instructor");
       res.status(200).send(courseList);
     } catch (error) {
       res.status(500).send({ err: error });
