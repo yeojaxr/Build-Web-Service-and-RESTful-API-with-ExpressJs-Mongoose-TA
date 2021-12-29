@@ -26,7 +26,7 @@ class CourseController {
 
   static async getAllCourse(req, res) {
     try {
-      const CourseList = await CourseModel.find();
+      const courseList = await CourseModel.find();
       res.status(200).send(courseList);
     } catch (error) {
       res.status(500).send({ err: error });
@@ -39,7 +39,6 @@ class CourseController {
 
       const courseList = await CourseModel.findOne({
         _id: id,
-        
       });
       res.status(200).send(courseList);
     } catch (error) {

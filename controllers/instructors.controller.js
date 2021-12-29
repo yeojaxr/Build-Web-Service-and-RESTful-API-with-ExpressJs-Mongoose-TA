@@ -24,7 +24,7 @@ class InstructorsController {
 
   static async getAllInstructors(req, res) {
     try {
-      const InstructorsList = await InstructorsModel.find();
+      const instructorsList = await InstructorsModel.find();
       res.status(200).send(instructorsList);
     } catch (error) {
       res.status(500).send({ err: error });
@@ -35,7 +35,7 @@ class InstructorsController {
     try {
       const id = req.params.id;
 
-      const instructorsList = await InsructorsModel.findOne({
+      const instructorsList = await InstructorsModel.findOne({
         _id: id,
       });
       res.status(200).send(instructorsList);

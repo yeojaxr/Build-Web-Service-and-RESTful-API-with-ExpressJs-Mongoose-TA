@@ -28,7 +28,7 @@ class ParticipantsController {
 
   static async getAllParticipants(req, res) {
     try {
-      const ParticipantsList = await ParticipantsModel.find();
+      const participantsList = await ParticipantsModel.find();
       res.status(200).send(participantsList);
     } catch (error) {
       res.status(500).send({ err: error });
@@ -54,7 +54,7 @@ class ParticipantsController {
       const body = req.body;
       const name = body.name;
       const dateOfBirth = body.dateOfBirth;
-      const email = body.location;
+      const email = body.email;
       const phone = body.phone;
       const courses = body.courses;
 
@@ -63,7 +63,7 @@ class ParticipantsController {
         {
           name: name,
           dateOfBirth: dateOfBirth,
-          email: location,
+          email: email,
           phone: phone,
           courses: courses,
         }
